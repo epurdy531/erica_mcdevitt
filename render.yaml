@@ -1,7 +1,7 @@
 databases:
   - name: erica_mcdevitt
     databaseName: erica_mcdevitt
-    user: postgres
+    user: emcdevitt
     plan: free
 
 services:
