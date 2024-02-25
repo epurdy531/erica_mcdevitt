@@ -477,3 +477,440 @@ ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.pn
   
 ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
   
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:21:09 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered homes/_header.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered homes/_services.html.erb (Duration: 0.2ms | Allocations: 68)
+  [1m[36mRecommendation Load (1.2ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 56.9ms | Allocations: 3684)
+  Rendered homes/_about.html.erb (Duration: 0.8ms | Allocations: 60)
+  Rendered homes/_team.html.erb (Duration: 0.7ms | Allocations: 47)
+  Rendered homes/_contact.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered homes/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 3.7ms | Allocations: 654)
+  Rendered homes/index.html.erb within layouts/application (Duration: 76.7ms | Allocations: 5028)
+  Rendered layout layouts/application.html.erb (Duration: 79.6ms | Allocations: 5565)
+Completed 200 OK in 85ms (Views: 63.8ms | ActiveRecord: 18.4ms | Allocations: 5833)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Manish Jani"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.9ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Manish Jani"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:21:29.793888"], ["updated_at", "2024-02-25 15:21:29.793888"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Steven Carano"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (1.0ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Steven Carano"], ["body", "TBD"], ["company", "Mentor Graphics"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:21:29.808192"], ["updated_at", "2024-02-25 15:21:29.808192"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.7ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:21:29.822492"], ["updated_at", "2024-02-25 15:21:29.822492"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.7ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Zak Collins"], ["body", "It is my pleasure to recommend Erica McDevitt for admission into the master’s program at the University of Illinois. I worked with Erica at Mentor Graphics as a fellow software engineer for about 4 years and during that time I was consistently impressed by her work ethic and ability to quickly learn new skills. When Erica joined our team she did not know C++, the language our team worked in almost exclusively. She caught on very rapidly though and shortly after took ownership of the automation interface, which is a large codebase that requires a deep understanding of C++.\n\n\tErica possesses a strong curiosity and passion for academic topics and we would frequently do challenge problems in the areas of computer science, math, and physics during our lunch breaks. Her intelligence and great problem solving skills were very clear to me both while working with her and while solving these problems.\n\t\n\tIn addition to her technical skills, Erica is enthusiastic, kind, honest, and generally very pleasant to be around. She improves any team she is a part of and I think the same would be true for any class she is in.\n\t\n\tOverall, Erica is very talented and hardworking and I would consider her an exceptional candidate. She was always a pleasure to work with and has the ability to get along with anybody. I think she would be a wonderful addition to your graduate program.\n\t\n\tIf I can be of any further assistance, or provide you with any further information, please do not hesitate to contact me.\n\t\n\tSincerely,\n\tZachariah Collins"], ["date", "2024-02-25"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.7ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Zak Collins"], ["body", "It is my pleasure to recommend Erica McDevitt for admission into the master’s program at the University of Illinois. I worked with Erica at Mentor Graphics as a fellow software engineer for about 4 years and during that time I was consistently impressed by her work ethic and ability to quickly learn new skills. When Erica joined our team she did not know C++, the language our team worked in almost exclusively. She caught on very rapidly though and shortly after took ownership of the automation interface, which is a large codebase that requires a deep understanding of C++.\n\n\tErica possesses a strong curiosity and passion for academic topics and we would frequently do challenge problems in the areas of computer science, math, and physics during our lunch breaks. Her intelligence and great problem solving skills were very clear to me both while working with her and while solving these problems.\n\t\n\tIn addition to her technical skills, Erica is enthusiastic, kind, honest, and generally very pleasant to be around. She improves any team she is a part of and I think the same would be true for any class she is in.\n\t\n\tOverall, Erica is very talented and hardworking and I would consider her an exceptional candidate. She was always a pleasure to work with and has the ability to get along with anybody. I think she would be a wonderful addition to your graduate program.\n\t\n\tIf I can be of any further assistance, or provide you with any further information, please do not hesitate to contact me.\n\t\n\tSincerely,\n\tZachariah Collins"], ["company", "Mentor Graphics"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:21:29.834900"], ["updated_at", "2024-02-25 15:21:29.834900"]]
+  [1m[36mTRANSACTION (31.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.6ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.6ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:21:29.875448"], ["updated_at", "2024-02-25 15:21:29.875448"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.7ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Private Contract Work"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.7ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["company", "Private Contract Work"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:21:29.887091"], ["updated_at", "2024-02-25 15:21:29.887091"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:21:34 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered homes/_header.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered homes/_services.html.erb (Duration: 1.3ms | Allocations: 68)
+  [1m[36mRecommendation Load (1.4ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 6.3ms | Allocations: 798)
+  Rendered homes/_about.html.erb (Duration: 0.4ms | Allocations: 60)
+  Rendered homes/_team.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered homes/_contact.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered homes/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 2.4ms | Allocations: 824)
+  Rendered homes/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 2312)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 2851)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 1.4ms | Allocations: 3114)
+
+
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:21:38 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered homes/_header.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered homes/_services.html.erb (Duration: 0.7ms | Allocations: 68)
+  [1m[36mRecommendation Load (1.2ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 12.7ms | Allocations: 807)
+  Rendered homes/_about.html.erb (Duration: 0.7ms | Allocations: 60)
+  Rendered homes/_team.html.erb (Duration: 0.5ms | Allocations: 47)
+  Rendered homes/_contact.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered homes/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 5.1ms | Allocations: 824)
+  Rendered homes/index.html.erb within layouts/application (Duration: 28.2ms | Allocations: 2322)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 2863)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 1.2ms | Allocations: 3130)
+
+
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (1.7ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.6ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.7ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.8ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.8ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 5]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (1.1ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 6]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.9ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 7]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (1.0ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 8]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (1.2ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 9]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.7ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 10]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (1.0ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 11]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (1.1ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 12]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Count (14.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "recommendations"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Manish Jani"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.7ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Manish Jani"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:25:29.452165"], ["updated_at", "2024-02-25 15:25:29.452165"]]
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Steven Carano"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.9ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Steven Carano"], ["body", "TBD"], ["company", "Mentor Graphics"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:25:29.475945"], ["updated_at", "2024-02-25 15:25:29.475945"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.8ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:25:29.491747"], ["updated_at", "2024-02-25 15:25:29.491747"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Zak Collins"], ["body", "It is my pleasure to recommend Erica McDevitt for admission into the master’s program at the University of Illinois. I worked with Erica at Mentor Graphics as a fellow software engineer for about 4 years and during that time I was consistently impressed by her work ethic and ability to quickly learn new skills. When Erica joined our team she did not know C++, the language our team worked in almost exclusively. She caught on very rapidly though and shortly after took ownership of the automation interface, which is a large codebase that requires a deep understanding of C++.\n\n\tErica possesses a strong curiosity and passion for academic topics and we would frequently do challenge problems in the areas of computer science, math, and physics during our lunch breaks. Her intelligence and great problem solving skills were very clear to me both while working with her and while solving these problems.\n\t\n\tIn addition to her technical skills, Erica is enthusiastic, kind, honest, and generally very pleasant to be around. She improves any team she is a part of and I think the same would be true for any class she is in.\n\t\n\tOverall, Erica is very talented and hardworking and I would consider her an exceptional candidate. She was always a pleasure to work with and has the ability to get along with anybody. I think she would be a wonderful addition to your graduate program.\n\t\n\tIf I can be of any further assistance, or provide you with any further information, please do not hesitate to contact me.\n\t\n\tSincerely,\n\tZachariah Collins"], ["date", "2024-02-25"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.9ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Zak Collins"], ["body", "It is my pleasure to recommend Erica McDevitt for admission into the master’s program at the University of Illinois. I worked with Erica at Mentor Graphics as a fellow software engineer for about 4 years and during that time I was consistently impressed by her work ethic and ability to quickly learn new skills. When Erica joined our team she did not know C++, the language our team worked in almost exclusively. She caught on very rapidly though and shortly after took ownership of the automation interface, which is a large codebase that requires a deep understanding of C++.\n\n\tErica possesses a strong curiosity and passion for academic topics and we would frequently do challenge problems in the areas of computer science, math, and physics during our lunch breaks. Her intelligence and great problem solving skills were very clear to me both while working with her and while solving these problems.\n\t\n\tIn addition to her technical skills, Erica is enthusiastic, kind, honest, and generally very pleasant to be around. She improves any team she is a part of and I think the same would be true for any class she is in.\n\t\n\tOverall, Erica is very talented and hardworking and I would consider her an exceptional candidate. She was always a pleasure to work with and has the ability to get along with anybody. I think she would be a wonderful addition to your graduate program.\n\t\n\tIf I can be of any further assistance, or provide you with any further information, please do not hesitate to contact me.\n\t\n\tSincerely,\n\tZachariah Collins"], ["company", "Mentor Graphics"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:25:29.507876"], ["updated_at", "2024-02-25 15:25:29.507876"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (1.1ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:25:29.523215"], ["updated_at", "2024-02-25 15:25:29.523215"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Private Contract Work"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.8ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["company", "Private Contract Work"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:25:29.537674"], ["updated_at", "2024-02-25 15:25:29.537674"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:27:22 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 1.0ms | Allocations: 161)
+  Rendered homes/_header.html.erb (Duration: 0.9ms | Allocations: 127)
+  Rendered homes/_services.html.erb (Duration: 1.9ms | Allocations: 413)
+  [1m[36mRecommendation Load (1.6ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 59.6ms | Allocations: 17648)
+  Rendered homes/_about.html.erb (Duration: 1.9ms | Allocations: 408)
+  Rendered homes/_team.html.erb (Duration: 1.3ms | Allocations: 325)
+  Rendered homes/_contact.html.erb (Duration: 2.1ms | Allocations: 295)
+  Rendered homes/_footer.html.erb (Duration: 1.6ms | Allocations: 154)
+  [1m[36mCACHE Recommendation Load (0.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 4.4ms | Allocations: 960)
+  Rendered homes/index.html.erb within layouts/application (Duration: 88.3ms | Allocations: 22149)
+  Rendered layout layouts/application.html.erb (Duration: 102.2ms | Allocations: 23062)
+Completed 200 OK in 152ms (Views: 97.8ms | ActiveRecord: 11.2ms | Allocations: 29442)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRecommendation Load (1.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.9ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 13]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.9ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 14]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.8ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 15]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.9ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 16]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.8ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 17]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.8ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 18]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (1.2ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Manish Jani"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (1.2ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Manish Jani"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:31:33.836617"], ["updated_at", "2024-02-25 15:31:33.836617"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Steven Carano"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.8ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Steven Carano"], ["body", "TBD"], ["company", "Mentor Graphics"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:31:33.855318"], ["updated_at", "2024-02-25 15:31:33.855318"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.8ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:31:33.871034"], ["updated_at", "2024-02-25 15:31:33.871034"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.7ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Zak Collins"], ["body", "It is my pleasure to recommend Erica McDevitt.  I worked with Erica at Mentor Graphics as a fellow software engineer for about 4 years and during that time I was consistently impressed by her work ethic and ability to quickly learn new skills. When Erica joined our team she did not know C++, the language our team worked in almost exclusively. She caught on very rapidly though and shortly after took ownership of the automation interface, which is a large codebase that requires a deep understanding of C++.<br><br>\n\tErica possesses a strong curiosity and passion for academic topics and we would frequently do challenge problems in the areas of computer science, math, and physics during our lunch breaks. Her intelligence and great problem solving skills were very clear to me both while working with her and while solving these problems.<br><br>\n\tIn addition to her technical skills, Erica is enthusiastic, kind, honest, and generally very pleasant to be around. She improves any team she is a part of and I think the same would be true for any class she is in.<br><br>\n\tOverall, Erica is very talented and hardworking and I would consider her an exceptional candidate. She was always a pleasure to work with and has the ability to get along with anybody.<br><br>\n\tZachariah Collins"], ["date", "2024-02-25"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (1.0ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Zak Collins"], ["body", "It is my pleasure to recommend Erica McDevitt.  I worked with Erica at Mentor Graphics as a fellow software engineer for about 4 years and during that time I was consistently impressed by her work ethic and ability to quickly learn new skills. When Erica joined our team she did not know C++, the language our team worked in almost exclusively. She caught on very rapidly though and shortly after took ownership of the automation interface, which is a large codebase that requires a deep understanding of C++.<br><br>\n\tErica possesses a strong curiosity and passion for academic topics and we would frequently do challenge problems in the areas of computer science, math, and physics during our lunch breaks. Her intelligence and great problem solving skills were very clear to me both while working with her and while solving these problems.<br><br>\n\tIn addition to her technical skills, Erica is enthusiastic, kind, honest, and generally very pleasant to be around. She improves any team she is a part of and I think the same would be true for any class she is in.<br><br>\n\tOverall, Erica is very talented and hardworking and I would consider her an exceptional candidate. She was always a pleasure to work with and has the ability to get along with anybody.<br><br>\n\tZachariah Collins"], ["company", "Mentor Graphics"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:31:33.886658"], ["updated_at", "2024-02-25 15:31:33.886658"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.7ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.9ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:31:33.903049"], ["updated_at", "2024-02-25 15:31:33.903049"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Private Contract Work"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.8ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["company", "Private Contract Work"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:31:33.919780"], ["updated_at", "2024-02-25 15:31:33.919780"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:31:55 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered homes/_header.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered homes/_services.html.erb (Duration: 0.4ms | Allocations: 68)
+  [1m[36mRecommendation Load (1.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 6.3ms | Allocations: 682)
+  Rendered homes/_about.html.erb (Duration: 0.8ms | Allocations: 60)
+  Rendered homes/_team.html.erb (Duration: 0.3ms | Allocations: 47)
+  Rendered homes/_contact.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered homes/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  [1m[36mCACHE Recommendation Load (0.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 3.4ms | Allocations: 657)
+  Rendered homes/index.html.erb within layouts/application (Duration: 26.6ms | Allocations: 2029)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 2557)
+Completed 200 OK in 43ms (Views: 32.1ms | ActiveRecord: 1.1ms | Allocations: 2828)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRecommendation Load (1.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (1.0ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 19]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.7ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 20]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.6ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 21]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (0.9ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 22]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (1.0ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 23]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Destroy (1.0ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 24]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Manish Jani"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (1.1ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Manish Jani"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:33:15.674371"], ["updated_at", "2024-02-25 15:33:15.674371"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.7ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Steven Carano"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.9ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Steven Carano"], ["body", "TBD"], ["company", "Mentor Graphics"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:33:15.688676"], ["updated_at", "2024-02-25 15:33:15.688676"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.8ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:33:15.704943"], ["updated_at", "2024-02-25 15:33:15.704943"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Zak Collins"], ["body", "It is my pleasure to recommend Erica McDevitt.  I worked with Erica at Mentor Graphics as a fellow software engineer for about 4 years and during that time I was consistently impressed by her work ethic and ability to quickly learn new skills. When Erica joined our team she did not know C++, the language our team worked in almost exclusively. She caught on very rapidly though and shortly after took ownership of the automation interface, which is a large codebase that requires a deep understanding of C++.<br/><br/>\n\tErica possesses a strong curiosity and passion for academic topics and we would frequently do challenge problems in the areas of computer science, math, and physics during our lunch breaks. Her intelligence and great problem solving skills were very clear to me both while working with her and while solving these problems.<br/><br/>\n\tIn addition to her technical skills, Erica is enthusiastic, kind, honest, and generally very pleasant to be around. She improves any team she is a part of and I think the same would be true for any class she is in.<br/><br/>\n\tOverall, Erica is very talented and hardworking and I would consider her an exceptional candidate. She was always a pleasure to work with and has the ability to get along with anybody.<br/><br/>\n\tZachariah Collins"], ["date", "2024-02-25"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (2.1ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Zak Collins"], ["body", "It is my pleasure to recommend Erica McDevitt.  I worked with Erica at Mentor Graphics as a fellow software engineer for about 4 years and during that time I was consistently impressed by her work ethic and ability to quickly learn new skills. When Erica joined our team she did not know C++, the language our team worked in almost exclusively. She caught on very rapidly though and shortly after took ownership of the automation interface, which is a large codebase that requires a deep understanding of C++.<br/><br/>\n\tErica possesses a strong curiosity and passion for academic topics and we would frequently do challenge problems in the areas of computer science, math, and physics during our lunch breaks. Her intelligence and great problem solving skills were very clear to me both while working with her and while solving these problems.<br/><br/>\n\tIn addition to her technical skills, Erica is enthusiastic, kind, honest, and generally very pleasant to be around. She improves any team she is a part of and I think the same would be true for any class she is in.<br/><br/>\n\tOverall, Erica is very talented and hardworking and I would consider her an exceptional candidate. She was always a pleasure to work with and has the ability to get along with anybody.<br/><br/>\n\tZachariah Collins"], ["company", "Mentor Graphics"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:33:15.718642"], ["updated_at", "2024-02-25 15:33:15.718642"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.6ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.6ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:33:15.732670"], ["updated_at", "2024-02-25 15:33:15.732670"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.6ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Private Contract Work"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.5ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["company", "Private Contract Work"], ["date", "2024-02-25"], ["created_at", "2024-02-25 15:33:15.744371"], ["updated_at", "2024-02-25 15:33:15.744371"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:33:24 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered homes/_header.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered homes/_services.html.erb (Duration: 0.3ms | Allocations: 68)
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 4.9ms | Allocations: 682)
+  Rendered homes/_about.html.erb (Duration: 0.3ms | Allocations: 60)
+  Rendered homes/_team.html.erb (Duration: 0.3ms | Allocations: 47)
+  Rendered homes/_contact.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered homes/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 3.8ms | Allocations: 657)
+  Rendered homes/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 2029)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 2559)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.8ms | Allocations: 2829)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:36:17 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.7ms | Allocations: 159)
+  Rendered homes/_header.html.erb (Duration: 0.7ms | Allocations: 125)
+  Rendered homes/_services.html.erb (Duration: 3.6ms | Allocations: 390)
+  [1m[36mRecommendation Load (1.7ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 8.1ms | Allocations: 953)
+  Rendered homes/_about.html.erb (Duration: 1.8ms | Allocations: 402)
+  Rendered homes/_team.html.erb (Duration: 2.4ms | Allocations: 320)
+  Rendered homes/_contact.html.erb (Duration: 1.6ms | Allocations: 293)
+  Rendered homes/_footer.html.erb (Duration: 1.5ms | Allocations: 152)
+  [1m[36mCACHE Recommendation Load (0.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 10.1ms | Allocations: 1730)
+  Rendered homes/index.html.erb within layouts/application (Duration: 42.5ms | Allocations: 5938)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 6744)
+Completed 200 OK in 57ms (Views: 51.9ms | ActiveRecord: 1.7ms | Allocations: 7721)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:38:32 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 1.3ms | Allocations: 159)
+  Rendered homes/_header.html.erb (Duration: 1.4ms | Allocations: 125)
+  Rendered homes/_services.html.erb (Duration: 2.0ms | Allocations: 372)
+  [1m[36mRecommendation Load (1.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 7.7ms | Allocations: 952)
+  Rendered homes/_about.html.erb (Duration: 1.8ms | Allocations: 402)
+  Rendered homes/_team.html.erb (Duration: 2.4ms | Allocations: 320)
+  Rendered homes/_contact.html.erb (Duration: 4.4ms | Allocations: 293)
+  Rendered homes/_footer.html.erb (Duration: 2.6ms | Allocations: 152)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 16.9ms | Allocations: 1730)
+  Rendered homes/index.html.erb within layouts/application (Duration: 57.6ms | Allocations: 5919)
+  Rendered layout layouts/application.html.erb (Duration: 65.1ms | Allocations: 6719)
+Completed 200 OK in 75ms (Views: 71.7ms | ActiveRecord: 1.1ms | Allocations: 7695)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:39:47 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.8ms | Allocations: 159)
+  Rendered homes/_header.html.erb (Duration: 3.0ms | Allocations: 125)
+  Rendered homes/_services.html.erb (Duration: 2.7ms | Allocations: 372)
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 7.6ms | Allocations: 943)
+  Rendered homes/_about.html.erb (Duration: 2.9ms | Allocations: 402)
+  Rendered homes/_team.html.erb (Duration: 1.5ms | Allocations: 320)
+  Rendered homes/_contact.html.erb (Duration: 1.1ms | Allocations: 293)
+  Rendered homes/_footer.html.erb (Duration: 1.3ms | Allocations: 152)
+  [1m[36mCACHE Recommendation Load (0.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 12.5ms | Allocations: 1730)
+  Rendered homes/index.html.erb within layouts/application (Duration: 50.4ms | Allocations: 5910)
+  Rendered layout layouts/application.html.erb (Duration: 55.8ms | Allocations: 6714)
+Completed 200 OK in 68ms (Views: 59.7ms | ActiveRecord: 0.9ms | Allocations: 7686)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:40:18 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 1.8ms | Allocations: 159)
+  Rendered homes/_header.html.erb (Duration: 1.6ms | Allocations: 125)
+  Rendered homes/_services.html.erb (Duration: 2.1ms | Allocations: 370)
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 15.5ms | Allocations: 943)
+  Rendered homes/_about.html.erb (Duration: 2.3ms | Allocations: 402)
+  Rendered homes/_team.html.erb (Duration: 2.1ms | Allocations: 320)
+  Rendered homes/_contact.html.erb (Duration: 3.7ms | Allocations: 293)
+  Rendered homes/_footer.html.erb (Duration: 1.4ms | Allocations: 152)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 22.2ms | Allocations: 1730)
+  Rendered homes/index.html.erb within layouts/application (Duration: 78.0ms | Allocations: 5908)
+  Rendered layout layouts/application.html.erb (Duration: 93.6ms | Allocations: 6714)
+Completed 200 OK in 100ms (Views: 96.9ms | ActiveRecord: 1.0ms | Allocations: 7686)
+
+
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:40:58 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 4.5ms | Allocations: 159)
+  Rendered homes/_header.html.erb (Duration: 5.5ms | Allocations: 125)
+  Rendered homes/_services.html.erb (Duration: 2.8ms | Allocations: 369)
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 13.2ms | Allocations: 944)
+  Rendered homes/_about.html.erb (Duration: 3.6ms | Allocations: 402)
+  Rendered homes/_team.html.erb (Duration: 8.8ms | Allocations: 320)
+  Rendered homes/_contact.html.erb (Duration: 1.4ms | Allocations: 293)
+  Rendered homes/_footer.html.erb (Duration: 1.6ms | Allocations: 152)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 31.9ms | Allocations: 1732)
+  Rendered homes/index.html.erb within layouts/application (Duration: 105.8ms | Allocations: 5911)
+  Rendered layout layouts/application.html.erb (Duration: 110.3ms | Allocations: 6713)
+Completed 200 OK in 127ms (Views: 122.9ms | ActiveRecord: 0.9ms | Allocations: 7685)
+
+
