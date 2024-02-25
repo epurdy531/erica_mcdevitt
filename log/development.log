@@ -1,0 +1,479 @@
+  [1m[35m (275.6ms)[0m  [1m[35mCREATE DATABASE "erica_mcdevitt_development" ENCODING = 'utf8'[0m
+  [1m[35m (139.0ms)[0m  [1m[35mCREATE DATABASE "erica_mcdevitt_test" ENCODING = 'utf8'[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3038888837731270860)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHomes (20240223185127)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "homes" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240223185127"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-02-23 19:00:35.987402"], ["updated_at", "2024-02-23 19:00:35.987402"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3038888837731270860)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-02-23 12:00:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 483)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 4718)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms | Allocations: 13526)
+
+
+  
+ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.
+):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for 127.0.0.1 at 2024-02-23 12:01:41 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 1142.4ms | Allocations: 90468)
+Completed 500 Internal Server Error in 1145ms (ActiveRecord: 0.0ms | Allocations: 90715)
+
+
+  
+ActionView::Template::Error (Asset `application.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link application.css
+
+and restart your server):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3038888837731270860)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecommendations (20240223191347)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (39.9ms)[0m  [1m[35mCREATE TABLE "recommendations" ("id" bigserial primary key, "author" character varying, "body" text, "company" text, "date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240223191347"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(3038888837731270860)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Manish Jani"], ["body", "TBD"], ["date", "2024-02-24"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (1.0ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Manish Jani"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-24"], ["created_at", "2024-02-24 15:56:34.747025"], ["updated_at", "2024-02-24 15:56:34.747025"]]
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Steven Carano"], ["body", "TBD"], ["date", "2024-02-24"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.9ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Steven Carano"], ["body", "TBD"], ["company", "Mentor Graphics"], ["date", "2024-02-24"], ["created_at", "2024-02-24 15:56:34.771656"], ["updated_at", "2024-02-24 15:56:34.771656"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["date", "2024-02-24"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.9ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-24"], ["created_at", "2024-02-24 15:56:34.786748"], ["updated_at", "2024-02-24 15:56:34.786748"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.8ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Zak Collins"], ["body", "TBD"], ["date", "2024-02-24"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.8ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Zak Collins"], ["body", "TBD"], ["company", "Mentor Graphics"], ["date", "2024-02-24"], ["created_at", "2024-02-24 15:56:34.803104"], ["updated_at", "2024-02-24 15:56:34.803104"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (1.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["date", "2024-02-24"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.8ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-24"], ["created_at", "2024-02-24 15:56:34.818911"], ["updated_at", "2024-02-24 15:56:34.818911"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["date", "2024-02-24"], ["company", "Private Contract Work"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.9ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["company", "Private Contract Work"], ["date", "2024-02-24"], ["created_at", "2024-02-24 15:56:34.834050"], ["updated_at", "2024-02-24 15:56:34.834050"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2024-02-24 08:56:44 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.7ms | Allocations: 161)
+  Rendered homes/_header.html.erb (Duration: 0.6ms | Allocations: 127)
+  Rendered homes/_services.html.erb (Duration: 485.9ms | Allocations: 40002)
+  [1m[36mRecommendation Load (1.5ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 52.6ms | Allocations: 17670)
+  Rendered homes/_about.html.erb (Duration: 7.4ms | Allocations: 2172)
+  Rendered homes/_team.html.erb (Duration: 6.7ms | Allocations: 1626)
+  Rendered homes/_contact.html.erb (Duration: 1.4ms | Allocations: 295)
+  Rendered homes/_footer.html.erb (Duration: 1.3ms | Allocations: 154)
+  [1m[36mCACHE Recommendation Load (0.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 9.6ms | Allocations: 2833)
+  Rendered homes/index.html.erb within layouts/application (Duration: 583.5ms | Allocations: 68266)
+  Rendered layout layouts/application.html.erb (Duration: 2033.9ms | Allocations: 104662)
+Completed 500 Internal Server Error in 2042ms (ActiveRecord: 13.1ms | Allocations: 106029)
+
+
+  
+ActionView::Template::Error (Asset `application.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link application.css
+
+and restart your server):
+    10:     <%= csrf_meta_tags %>
+    11:     <%= csp_meta_tag %>
+    12: 
+    13:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    14:     <%= javascript_importmap_tags %>
+    15:     <!-- Favicon-->
+    16:     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  
+app/views/layouts/application.html.erb:13
+Started GET "/" for 127.0.0.1 at 2024-02-24 09:01:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.7ms | Allocations: 161)
+  Rendered homes/_header.html.erb (Duration: 0.6ms | Allocations: 127)
+  Rendered homes/_services.html.erb (Duration: 1.1ms | Allocations: 341)
+  [1m[36mRecommendation Load (1.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 45.7ms | Allocations: 17648)
+  Rendered homes/_about.html.erb (Duration: 1.4ms | Allocations: 408)
+  Rendered homes/_team.html.erb (Duration: 1.8ms | Allocations: 325)
+  Rendered homes/_contact.html.erb (Duration: 1.7ms | Allocations: 295)
+  Rendered homes/_footer.html.erb (Duration: 1.1ms | Allocations: 154)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 5.4ms | Allocations: 958)
+  Rendered homes/index.html.erb within layouts/application (Duration: 72.2ms | Allocations: 22075)
+  Rendered layout layouts/application.html.erb (Duration: 82.0ms | Allocations: 22901)
+Completed 200 OK in 117ms (Views: 79.3ms | ActiveRecord: 10.9ms | Allocations: 29281)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-24 09:14:33 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 1.5ms | Allocations: 159)
+  Rendered homes/_header.html.erb (Duration: 1.1ms | Allocations: 126)
+  Rendered homes/_services.html.erb (Duration: 6.7ms | Allocations: 318)
+  [1m[36mRecommendation Load (1.2ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 67.1ms | Allocations: 3925)
+  Rendered homes/_about.html.erb (Duration: 7.7ms | Allocations: 402)
+  Rendered homes/_team.html.erb (Duration: 2.0ms | Allocations: 320)
+  Rendered homes/_contact.html.erb (Duration: 2.8ms | Allocations: 293)
+  Rendered homes/_footer.html.erb (Duration: 0.8ms | Allocations: 152)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 5.9ms | Allocations: 946)
+  Rendered homes/index.html.erb within layouts/application (Duration: 121.2ms | Allocations: 8055)
+  Rendered layout layouts/application.html.erb (Duration: 131.4ms | Allocations: 8861)
+Completed 200 OK in 137ms (Views: 113.3ms | ActiveRecord: 22.3ms | Allocations: 9833)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-24 09:20:26 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 1.6ms | Allocations: 159)
+  Rendered homes/_header.html.erb (Duration: 1.1ms | Allocations: 126)
+  Rendered homes/_services.html.erb (Duration: 2.8ms | Allocations: 318)
+  [1m[36mRecommendation Load (2.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 69.6ms | Allocations: 3894)
+  Rendered homes/_about.html.erb (Duration: 9.5ms | Allocations: 402)
+  Rendered homes/_team.html.erb (Duration: 3.7ms | Allocations: 320)
+  Rendered homes/_contact.html.erb (Duration: 13.6ms | Allocations: 293)
+  Rendered homes/_footer.html.erb (Duration: 1.5ms | Allocations: 152)
+  [1m[36mCACHE Recommendation Load (0.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 17.1ms | Allocations: 947)
+  Rendered homes/index.html.erb within layouts/application (Duration: 148.4ms | Allocations: 8025)
+  Rendered layout layouts/application.html.erb (Duration: 163.0ms | Allocations: 8826)
+Completed 200 OK in 171ms (Views: 142.8ms | ActiveRecord: 25.9ms | Allocations: 9806)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-24 09:21:06 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.7ms | Allocations: 161)
+  Rendered homes/_header.html.erb (Duration: 0.7ms | Allocations: 127)
+  Rendered homes/_services.html.erb (Duration: 2.7ms | Allocations: 341)
+  [1m[36mRecommendation Load (1.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 43.2ms | Allocations: 17648)
+  Rendered homes/_about.html.erb (Duration: 1.4ms | Allocations: 408)
+  Rendered homes/_team.html.erb (Duration: 2.0ms | Allocations: 325)
+  Rendered homes/_contact.html.erb (Duration: 2.3ms | Allocations: 295)
+  Rendered homes/_footer.html.erb (Duration: 1.1ms | Allocations: 154)
+  [1m[36mCACHE Recommendation Load (0.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 4.5ms | Allocations: 958)
+  Rendered homes/index.html.erb within layouts/application (Duration: 72.5ms | Allocations: 22076)
+  Rendered layout layouts/application.html.erb (Duration: 83.1ms | Allocations: 22981)
+Completed 200 OK in 110ms (Views: 79.3ms | ActiveRecord: 10.3ms | Allocations: 29361)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-24 09:27:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 1.3ms | Allocations: 161)
+  Rendered homes/_header.html.erb (Duration: 1.1ms | Allocations: 127)
+  Rendered homes/_services.html.erb (Duration: 2.1ms | Allocations: 341)
+  [1m[36mRecommendation Load (1.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 51.0ms | Allocations: 17648)
+  Rendered homes/_about.html.erb (Duration: 1.7ms | Allocations: 408)
+  Rendered homes/_team.html.erb (Duration: 1.2ms | Allocations: 325)
+  Rendered homes/_contact.html.erb (Duration: 1.0ms | Allocations: 295)
+  Rendered homes/_footer.html.erb (Duration: 1.1ms | Allocations: 154)
+  [1m[36mCACHE Recommendation Load (0.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 10.2ms | Allocations: 958)
+  Rendered homes/index.html.erb within layouts/application (Duration: 88.8ms | Allocations: 22075)
+  Rendered layout layouts/application.html.erb (Duration: 104.2ms | Allocations: 22988)
+Completed 200 OK in 136ms (Views: 99.9ms | ActiveRecord: 11.9ms | Allocations: 29368)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-24 09:28:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.8ms | Allocations: 161)
+  Rendered homes/_header.html.erb (Duration: 0.7ms | Allocations: 127)
+  Rendered homes/_services.html.erb (Duration: 2.0ms | Allocations: 341)
+  [1m[36mRecommendation Load (1.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 39.4ms | Allocations: 17649)
+  Rendered homes/_about.html.erb (Duration: 1.1ms | Allocations: 408)
+  Rendered homes/_team.html.erb (Duration: 1.0ms | Allocations: 325)
+  Rendered homes/_contact.html.erb (Duration: 1.0ms | Allocations: 295)
+  Rendered homes/_footer.html.erb (Duration: 0.7ms | Allocations: 154)
+  [1m[36mCACHE Recommendation Load (0.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 7.5ms | Allocations: 958)
+  Rendered homes/index.html.erb within layouts/application (Duration: 63.6ms | Allocations: 22079)
+  Rendered layout layouts/application.html.erb (Duration: 78.0ms | Allocations: 22992)
+Completed 200 OK in 105ms (Views: 77.3ms | ActiveRecord: 8.8ms | Allocations: 29372)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:11:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.6ms | Allocations: 161)
+  Rendered homes/_header.html.erb (Duration: 0.8ms | Allocations: 127)
+  Rendered homes/_services.html.erb (Duration: 1.5ms | Allocations: 413)
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 44.0ms | Allocations: 17648)
+  Rendered homes/_about.html.erb (Duration: 1.1ms | Allocations: 408)
+  Rendered homes/_team.html.erb (Duration: 1.0ms | Allocations: 325)
+  Rendered homes/_contact.html.erb (Duration: 1.1ms | Allocations: 295)
+  Rendered homes/_footer.html.erb (Duration: 0.9ms | Allocations: 154)
+  [1m[36mCACHE Recommendation Load (0.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 4.3ms | Allocations: 958)
+  Rendered homes/index.html.erb within layouts/application (Duration: 64.8ms | Allocations: 22147)
+  Rendered layout layouts/application.html.erb (Duration: 75.7ms | Allocations: 23056)
+Completed 200 OK in 105ms (Views: 71.9ms | ActiveRecord: 9.9ms | Allocations: 29436)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/favicon.ico"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-25 08:15:04 -0700
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.3ms | Allocations: 9)
+  Rendered homes/_header.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered homes/_services.html.erb (Duration: 0.6ms | Allocations: 68)
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 6.0ms | Allocations: 682)
+  Rendered homes/_about.html.erb (Duration: 0.5ms | Allocations: 60)
+  Rendered homes/_team.html.erb (Duration: 0.5ms | Allocations: 47)
+  Rendered homes/_contact.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered homes/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 5.6ms | Allocations: 654)
+  Rendered homes/index.html.erb within layouts/application (Duration: 22.3ms | Allocations: 2026)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 2559)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.9ms | Allocations: 2828)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  

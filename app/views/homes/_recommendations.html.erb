@@ -1,0 +1,28 @@
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Recommendations</h2>
+                <h3 class="section-subheading text-muted">Here are some comments form former and current employeers about my accomplishments, how I am as a coworker, and what it's like to work with me in general!</h3>
+            </div>
+            <div class="row">
+                <% Recommendation.all.each_with_index do |recommendation, index|%>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item">
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading" style="text-align:left;"><%=recommendation.author%></div>
+                            <div class="portfolio-caption-subheading text-muted" style="text-align:right;">-<%=recommendation.company%></div>
+                        </div>
+                        <a class="portfolio-link" data-bs-toggle="modal" href=<%="#portfolioModal#{index+1}"%>>
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">..Read More</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </section>
+
+    
