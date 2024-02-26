@@ -914,3 +914,80 @@ Processing by HomesController#index as HTML
 Completed 200 OK in 127ms (Views: 122.9ms | ActiveRecord: 0.9ms | Allocations: 7685)
 
 
+  [1m[35m (50.9ms)[0m  [1m[35mCREATE DATABASE "erica_mcdevitt" ENCODING = 'utf8'[0m
+  [1m[35m (31.2ms)[0m  [1m[35mCREATE DATABASE "erica_mcdevitt_test" ENCODING = 'utf8'[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6959217710184672870)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHomes (20240223185127)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (100.6ms)[0m  [1m[35mCREATE TABLE "homes" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240223185127"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRecommendations (20240223191347)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "recommendations" ("id" bigserial primary key, "author" character varying, "body" text, "company" text, "date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240223191347"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-02-26 02:43:29.774972"], ["updated_at", "2024-02-26 02:43:29.774972"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6959217710184672870)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRecommendation Load (0.7ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  [1m[36mRecommendation Load (0.3ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Manish Jani"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.8ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Manish Jani"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-26 02:44:32.004602"], ["updated_at", "2024-02-26 02:44:32.004602"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.3ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Steven Carano"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.3ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Steven Carano"], ["body", "TBD"], ["company", "Mentor Graphics"], ["date", "2024-02-25"], ["created_at", "2024-02-26 02:44:32.008027"], ["updated_at", "2024-02-26 02:44:32.008027"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.3ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.3ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Regina Peyfuss"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-26 02:44:32.010624"], ["updated_at", "2024-02-26 02:44:32.010624"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.3ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Zak Collins"], ["body", "It is my pleasure to recommend Erica McDevitt.  I worked with Erica at Mentor Graphics as a fellow software engineer for about 4 years and during that time I was consistently impressed by her work ethic and ability to quickly learn new skills. When Erica joined our team she did not know C++, the language our team worked in almost exclusively. She caught on very rapidly though and shortly after took ownership of the automation interface, which is a large codebase that requires a deep understanding of C++.<br/><br/>\n\tErica possesses a strong curiosity and passion for academic topics and we would frequently do challenge problems in the areas of computer science, math, and physics during our lunch breaks. Her intelligence and great problem solving skills were very clear to me both while working with her and while solving these problems.<br/><br/>\n\tIn addition to her technical skills, Erica is enthusiastic, kind, honest, and generally very pleasant to be around. She improves any team she is a part of and I think the same would be true for any class she is in.<br/><br/>\n\tOverall, Erica is very talented and hardworking and I would consider her an exceptional candidate. She was always a pleasure to work with and has the ability to get along with anybody.<br/><br/>\n\tZachariah Collins"], ["date", "2024-02-25"], ["company", "Mentor Graphics"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.3ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Zak Collins"], ["body", "It is my pleasure to recommend Erica McDevitt.  I worked with Erica at Mentor Graphics as a fellow software engineer for about 4 years and during that time I was consistently impressed by her work ethic and ability to quickly learn new skills. When Erica joined our team she did not know C++, the language our team worked in almost exclusively. She caught on very rapidly though and shortly after took ownership of the automation interface, which is a large codebase that requires a deep understanding of C++.<br/><br/>\n\tErica possesses a strong curiosity and passion for academic topics and we would frequently do challenge problems in the areas of computer science, math, and physics during our lunch breaks. Her intelligence and great problem solving skills were very clear to me both while working with her and while solving these problems.<br/><br/>\n\tIn addition to her technical skills, Erica is enthusiastic, kind, honest, and generally very pleasant to be around. She improves any team she is a part of and I think the same would be true for any class she is in.<br/><br/>\n\tOverall, Erica is very talented and hardworking and I would consider her an exceptional candidate. She was always a pleasure to work with and has the ability to get along with anybody.<br/><br/>\n\tZachariah Collins"], ["company", "Mentor Graphics"], ["date", "2024-02-25"], ["created_at", "2024-02-26 02:44:32.013208"], ["updated_at", "2024-02-26 02:44:32.013208"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.2ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Colorado Legislative Council"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.3ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Thomas Nehring"], ["body", "TBD"], ["company", "Colorado Legislative Council"], ["date", "2024-02-25"], ["created_at", "2024-02-26 02:44:32.015829"], ["updated_at", "2024-02-26 02:44:32.015829"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecommendation Load (0.3ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations" WHERE "recommendations"."author" = $1 AND "recommendations"."body" = $2 AND "recommendations"."date" = $3 AND "recommendations"."company" = $4 LIMIT $5[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["date", "2024-02-25"], ["company", "Private Contract Work"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecommendation Create (0.3ms)[0m  [1m[32mINSERT INTO "recommendations" ("author", "body", "company", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author", "Chelsie Lawson"], ["body", "TBD"], ["company", "Private Contract Work"], ["date", "2024-02-25"], ["created_at", "2024-02-26 02:44:32.018421"], ["updated_at", "2024-02-26 02:44:32.018421"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2024-02-25 19:45:32 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/_top_nav.html.erb (Duration: 0.3ms | Allocations: 163)
+  Rendered homes/_header.html.erb (Duration: 0.1ms | Allocations: 129)
+  Rendered homes/_services.html.erb (Duration: 0.3ms | Allocations: 377)
+  [1m[36mRecommendation Load (1.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendations.html.erb:8:in `each_with_index'
+  Rendered homes/_recommendations.html.erb (Duration: 12.3ms | Allocations: 17676)
+  Rendered homes/_about.html.erb (Duration: 0.3ms | Allocations: 410)
+  Rendered homes/_team.html.erb (Duration: 0.3ms | Allocations: 327)
+  Rendered homes/_contact.html.erb (Duration: 0.2ms | Allocations: 297)
+  Rendered homes/_footer.html.erb (Duration: 0.2ms | Allocations: 156)
+  [1m[36mCACHE Recommendation Load (0.0ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  ↳ app/views/homes/_recommendation_modals.html.erb:2:in `each_with_index'
+  Rendered homes/_recommendation_modals.html.erb (Duration: 2.4ms | Allocations: 1769)
+  Rendered homes/index.html.erb within layouts/application (Duration: 18.3ms | Allocations: 23102)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 23939)
+Completed 200 OK in 31ms (Views: 14.6ms | ActiveRecord: 7.5ms | Allocations: 32834)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/map-image.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/favicon.ico"):
+  

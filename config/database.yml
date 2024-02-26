@@ -46,6 +46,6 @@ production:
 staging:
   adapter: postgresql
   host: <%= Rails.application.credentials.DB_HOST %>
-  database: <%= Rails.application.credentials.DB  {'cogar'} %>
+  database: <%= Rails.application.credentials.DB  {'erica_mcdevitt'} %>
   username: <%= Rails.application.credentials.DB_USER %>
   password: <%= Rails.application.credentials.DB_PASSWORD %>
